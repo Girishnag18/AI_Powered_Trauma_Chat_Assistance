@@ -1,0 +1,26 @@
+CREATE DATABASE trauma_ai;
+USE trauma_ai;
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(100) UNIQUE,
+  password VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE chats (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
+  message TEXT,
+  sender ENUM('user','ai'),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE trauma_reports (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
+  score INT,
+  severity VARCHAR(20),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

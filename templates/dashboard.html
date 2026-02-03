@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Welcome back 🌱</h1>
+<p class="subtitle">Here’s a quick overview of how you’re doing</p>
+
+<div class="card-grid">
+
+  <div class="card">
+    <h3>Trauma Score</h3>
+    <div class="value">72 / 100</div>
+  </div>
+
+  <div class="card">
+    <h3>Severity Level</h3>
+    <div class="value">Moderate</div>
+  </div>
+
+  <div class="card">
+    <h3>Last Chat</h3>
+    <div class="value">2 hours ago</div>
+  </div>
+
+</div>
+
+<div class="card" style="margin-top:32px;">
+  <h3>Suggested Action</h3>
+  <p>
+    • Continue chatting with the AI assistant<br>
+    • Review your trauma report<br>
+    • Reach out for professional support if needed
+  </p>
+
+  <div class="action-row">
+  <a href="/chat" class="btn btn-primary">
+    Continue Chat
+  </a>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Chat Assistant</h1>
+<p class="subtitle">I’m here to listen. Share whatever feels right.</p>
+
+<div class="chat-wrapper">
+
+  <!-- CHAT AREA -->
+  <div id="chatBox" class="chat-box">
+    <div class="chat-bubble chat-ai">
+      👋 Hi, I’m here with you. How are you feeling today?
+    </div>
+  </div>
+
+  <!-- INPUT AREA -->
+  <div class="chat-input-area">
+    <button class="icon-btn" title="Voice input (coming soon)">🎙</button>
+
+    <input
+      id="msg"
+      type="text"
+      placeholder="Type how you’re feeling…"
+      autocomplete="off"
+    />
+
+    <button onclick="sendMessage()" class="btn btn-primary">
+      Send
+    </button>
+  </div>
+
+  <!-- EMERGENCY / SUPPORT PANEL -->
+  <div id="alertBox" class="support-panel hidden"></div>
+
+</div>
+
+<script src="/static/js/chat.js"></script>
+{% endblock %}

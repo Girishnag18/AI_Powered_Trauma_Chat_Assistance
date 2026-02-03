@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>History</h1>
+<p class="subtitle">Your past conversations and emotional insights</p>
+
+<div style="max-width:800px;">
+
+{% for c in chats %}
+  <div class="card" style="margin-bottom:16px;">
+    <div class="chat-bubble {{ 'chat-user' if c[1]=='user' else 'chat-ai' }}">
+      {{ c[0] }}
+    </div>
+    <small style="opacity:0.6;">{{ c[2] }}</small>
+  </div>
+{% else %}
+  <div class="card">
+    <p>No history available yet.</p>
+  </div>
+{% endfor %}
+
+</div>
+
+{% endblock %}

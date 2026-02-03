@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Trauma Report Card</h1>
+<p class="subtitle">Based on your recent conversations</p>
+
+{% if report %}
+
+<div class="card" style="max-width:700px;">
+
+  <h3>Overall Trauma Score</h3>
+  <div class="score-display">
+    {{ report[0] }} / 100
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-container">
+    <div
+      class="progress-bar-fill severity-{{ report[1]|lower }}"
+      style="width: {{ report[0] }}%;">
+    </div>
+  </div>
+
+  <div class="severity-label">
+    Severity Level:
+    <strong class="severity-{{ report[1]|lower }}">
+      {{ report[1] }}
+    </strong>
+  </div>
+
+</div>
+
+<div class="card" style="margin-top:24px; max-width:700px;">
+  <h3>Recommendations</h3>
+  <ul>
+    <li>Continue chatting to express your thoughts</li>
+    <li>Review your emotional patterns over time</li>
+    {% if report[1] in ['High', 'Critical'] %}
+      <li>Consider reaching out to professional support</li>
+    {% endif %}
+  </ul>
+
+  <div class="action-row">
+  <a href="/dashboard" class="btn btn-primary">
+    Back to Dashboard
+  </a>
+  </div>
+</div>
+
+{% else %}
+  <div class="card">
+    <p>No trauma report yet. Start chatting to generate one.</p>
+  </div>
+{% endif %}
+
+{% endblock %}
+

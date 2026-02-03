@@ -1,0 +1,6 @@
+class Config:
+    SECRET_KEY = "change-this-secret-key"
+    MYSQL_HOST = "localhost"
+    MYSQL_USER = "root"
+    MYSQL_PASSWORD = "your_mysql_password"
+    MYSQL_DB = "trauma_ai"

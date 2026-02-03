@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TraumaCare AI</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="logo">🧠 TraumaCare AI</div>
+  <div class="top-actions">
+    <button onclick="toggleTheme()" class="icon-btn">🌙</button>
+    <a href="/profile" class="profile-link">Profile</a>
+  </div>
+</header>
+
+<!-- MAIN LAYOUT -->
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a href="/dashboard">🏠 Dashboard</a>
+    <a href="/chat">💬 Chat Assistant</a>
+    <a href="/trauma-report">📊 Trauma Report</a>
+    <a href="/history">📜 History</a>
+    <a href="/admin">🚨 Emergency</a>
+    <a href="/profile">👤 Profile</a>
+    <a href="/logout" class="logout">🚪 Logout</a>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+    {% block content %}{% endblock %}
+  </main>
+
+</div>
+
+<script src="/static/js/theme.js"></script>
+</body>
+</html>
